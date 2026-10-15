@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do List Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="page-wrapper">
+
+  <!-- Storage unavailable banner -->
+  <div id="storage-banner" class="storage-banner" role="alert" aria-live="assertive" hidden>
+    <span>Storage is unavailable. Your data will not be saved this session.</span>
+    <button id="storage-banner-dismiss" class="storage-banner__dismiss" aria-label="Dismiss">x</button>
+  </div>
+
+  <!-- Page header -->
+  <header class="site-header">
+    <span class="site-header__title">Dashboard</span>
+    <button id="theme-toggle" class="theme-toggle"
+        aria-label="Switch to dark mode"
+        title="Switch to dark mode">
+      <span class="theme-toggle__icon" aria-hidden="true">&#x1F319;</span>
+    </button>
+  </header>
+
+  <!-- Dashboard grid -->
+  <main class="dashboard-grid">
+
+    <!-- Greeting Widget -->
+    <section id="greeting-widget" class="widget widget--greeting" aria-labelledby="greeting-title">
+      <div class="widget__header">
+        <h2 id="greeting-title" class="widget__title">Greeting</h2>
+      </div>
+      <p id="greeting-message" class="greeting__message" aria-live="polite">Good Morning</p>
+      <p id="greeting-time" class="greeting__time">00:00:00</p>
+      <p id="greeting-date" class="greeting__date">Loading...</p>
+    </section>
+
+    <!-- Focus Timer Widget -->
+    <section id="timer-widget" class="widget widget--timer" aria-labelledby="timer-title">
+      <div class="widget__header">
+        <h2 id="timer-title" class="widget__title">Focus Timer</h2>
+      </div>
+      <div id="timer-display" class="timer__display" aria-live="off" aria-label="Timer display">25:00</div>
+      <div id="timer-notice" class="timer-notice" role="alert" aria-live="assertive">
+        Session complete! Great work.
+      </div>
+      <div class="timer__controls">
+        <button id="timer-start" class="btn btn--primary" aria-label="Start timer">Start</button>
+        <button id="timer-stop"  class="btn btn--secondary" aria-label="Stop timer" disabled>Stop</button>
+        <button id="timer-reset" class="btn btn--secondary" aria-label="Reset timer">Reset</button>
+      </div>
+    </section>
+
+    <!-- To-Do List Widget -->
+    <section id="task-widget" class="widget widget--tasks" aria-labelledby="task-title">
+      <div class="widget__header">
+        <h2 id="task-title" class="widget__title">To-Do List</h2>
+      </div>
+
+      <!-- Add task form -->
+      <div class="task-form">
+        <label for="task-input" class="sr-only">New task title</label>
+        <input
+          type="text"
+          id="task-input"
+          class="form-input task-form__input"
+          placeholder="Add a new task..."
+          maxlength="200"
+          aria-describedby="task-input-error"
+        />
+        <button id="task-add-btn" class="btn btn--primary" aria-label="Add task">Add</button>
+      </div>
+      <p id="task-input-error" class="field-error" role="alert"></p>
+
+      <!-- Sort controls -->
+      <div class="sort-controls">
+        <label for="task-sort" class="sort-controls__label">Sort by:</label>
+        <select id="task-sort" class="sort-controls__select" aria-label="Sort tasks">
+          <option value="createdAsc">Oldest first</option>
+          <option value="createdDesc">Newest first</option>
+          <option value="completionState">Incomplete first</option>
+        </select>
+      </div>
+
+      <!-- Task list -->
+      <ul id="task-list" class="task-list" aria-label="Task list" aria-live="polite"></ul>
+      <p id="task-empty-state" class="task-list__empty" hidden>No tasks yet. Add one above!</p>
+    </section>
+
+    <!-- Quick Links Widget -->
+    <section id="quicklinks-widget" class="widget widget--links" aria-labelledby="quicklinks-title">
+      <div class="widget__header">
+        <h2 id="quicklinks-title" class="widget__title">Quick Links</h2>
+      </div>
+
+      <!-- Add quick link form -->
+      <div class="quicklink-form">
+        <label for="quicklink-label" class="sr-only">Link label</label>
+        <input
+          type="text"
+          id="quicklink-label"
+          class="form-input"
+          placeholder="Label (e.g. GitHub)"
+          maxlength="50"
+          aria-describedby="quicklink-error"
+        />
+        <label for="quicklink-url" class="sr-only">Link URL</label>
+        <input
+          type="url"
+          id="quicklink-url"
+          class="form-input"
+          placeholder="https://example.com"
+          maxlength="2048"
+          aria-describedby="quicklink-error"
+        />
+        <div class="quicklink-form__actions">
+          <button id="quicklink-add-btn" class="btn btn--primary" aria-label="Add quick link">Add Link</button>
+        </div>
+      </div>
+      <p id="quicklink-error" class="field-error" role="alert"></p>
+
+      <!-- Quick links list -->
+      <div id="quicklinks-list" class="quicklink-grid" aria-label="Quick links" aria-live="polite"></div>
+      <p id="quicklinks-empty-state" class="quicklink-empty" hidden>No links yet. Add one above!</p>
+    </section>
+
+  </main>
+</div>
+
+<script defer src="js/script.js"></script>
+</body>
+</html>

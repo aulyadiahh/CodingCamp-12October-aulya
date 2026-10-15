@@ -1,0 +1,239 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1.1 Create `index.html` with semantic sections for all four widgets": [
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083462839
+      },
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083470294
+      },
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083750395
+      }
+    ],
+    "1.2 Create `css/styles.css` with CSS custom properties for light and dark themes": [
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083463155
+      },
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083473994
+      },
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083754291
+      }
+    ],
+    "1.3 Create `js/app.js` with module skeleton and `DOMContentLoaded` bootstrap": [
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083463305
+      },
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083477468
+      },
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083758107
+      }
+    ],
+    "2.1 Implement `StorageService.load()` with safe-defaults fallback": [
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083463464
+      },
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083762459
+      }
+    ],
+    "2.2 Implement `StorageService.saveTasks()`, `saveQuickLinks()`, `saveTheme()`, `saveSortOrder()`": [
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083463646
+      },
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083766476
+      }
+    ],
+    "3.1 Implement `GreetingWidget.getGreeting(hour)` and `formatDate(date)` / `formatTime(date)`": [
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083463706
+      }
+    ],
+    "3.2 Implement `GreetingWidget.init()` and `tick()`": [
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083463785
+      }
+    ],
+    "4.1 Implement `TimerWidget.formatDisplay(s)` pure function": [
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083463868
+      }
+    ],
+    "4.2 Implement `TimerWidget.init()`, `start()`, `stop()`, `reset()`, `tick()`, `updateButtonStates()`": [
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083463938
+      }
+    ],
+    "5. Checkpoint — verify scaffold, storage, greeting, and timer": [
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083464005
+      }
+    ],
+    "6.1 Implement `TaskWidget.validate(title, excludeId?)`": [
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083464086
+      }
+    ],
+    "6.4 Implement `TaskWidget.addTask(title)`": [
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083464169
+      }
+    ],
+    "6.6 Implement `TaskWidget.toggleComplete(id)` and `deleteTask(id)`": [
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083464258
+      }
+    ],
+    "6.9 Implement `TaskWidget.beginEdit(id)`, `confirmEdit(id, newTitle)`, `cancelEdit(id)`": [
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083464330
+      }
+    ],
+    "7.1 Implement `TaskWidget.sortTasks(strategy)`": [
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083464402
+      }
+    ],
+    "7.3 Implement `TaskWidget.render()`": [
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083464471
+      }
+    ],
+    "7.4 Implement `TaskWidget.init()` with sort-control wiring": [
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083464539
+      }
+    ],
+    "8. Checkpoint — verify complete TaskWidget behaviour": [
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083464621
+      }
+    ],
+    "9.1 Implement `QuickLinkWidget.validateLink(label, url)`": [
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083464705
+      }
+    ],
+    "9.3 Implement `QuickLinkWidget.addLink(label, url)`, `deleteLink(id)`, `render()`": [
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083464884
+      }
+    ],
+    "9.4 Implement `QuickLinkWidget.init()`": [
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083464972
+      }
+    ],
+    "10.1 Implement `ThemeManager.apply(theme)`, `toggle()`, `init()`": [
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083465098
+      }
+    ],
+    "11.1 Complete `DOMContentLoaded` bootstrap in `app.js`": [
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083465213
+      }
+    ],
+    "12.1 Create `package.json` and install test dependencies": [
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083465273
+      },
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083770186
+      }
+    ],
+    "12.2 Create test stubs for all six test files": [
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083465387
+      }
+    ],
+    "13. Final checkpoint — full test suite and cross-browser smoke check": [
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083465506
+      }
+    ],
+    "1. Scaffold project structure and HTML skeleton": [
+      {
+        "executionId": "0fbec6c5-2e5e-49ad-b1c7-d42f3ba8a71f",
+        "chatSessionId": "sess_b7e035b6-80a5-44c1-92b5-411c498a9c65",
+        "timestamp": 1792083758159
+      }
+    ]
+  }
+}

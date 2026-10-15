@@ -1,0 +1,854 @@
+﻿/* ==========================================================================
+   To-Do List Dashboard â€” Main Stylesheet
+   Single CSS file for all styling (Requirement 10.2)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS Custom Properties â€” Light Theme (default)
+   Requirement 8.5: consistent font, spacing, and colour across all widgets
+   -------------------------------------------------------------------------- */
+:root {
+  /* Colours */
+  --color-bg:            #f5f5f5;
+  --color-surface:       #ffffff;
+  --color-surface-alt:   #f0f0f0;
+  --color-border:        #d1d5db;
+  --color-text-primary:  #111827;
+  --color-text-secondary:#6b7280;
+  --color-text-muted:    #9ca3af;
+  --color-accent:        #4f46e5;
+  --color-accent-hover:  #4338ca;
+  --color-accent-light:  #ede9fe;
+  --color-success:       #16a34a;
+  --color-danger:        #dc2626;
+  --color-danger-hover:  #b91c1c;
+  --color-warning:       #d97706;
+  --color-info:          #0284c7;
+
+  /* Shadows */
+  --shadow-sm:  0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md:  0 4px 6px rgba(0, 0, 0, 0.08);
+  --shadow-lg:  0 10px 15px rgba(0, 0, 0, 0.10);
+
+  /* Typography */
+  --font-family:         'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-size-xs:        0.75rem;   /* 12px */
+  --font-size-sm:        0.875rem;  /* 14px */
+  --font-size-base:      1rem;      /* 16px */
+  --font-size-lg:        1.125rem;  /* 18px */
+  --font-size-xl:        1.25rem;   /* 20px */
+  --font-size-2xl:       1.5rem;    /* 24px */
+  --font-size-3xl:       1.875rem;  /* 30px */
+  --font-size-4xl:       2.25rem;   /* 36px */
+  --font-weight-normal:  400;
+  --font-weight-medium:  500;
+  --font-weight-semibold:600;
+  --font-weight-bold:    700;
+  --line-height-tight:   1.25;
+  --line-height-base:    1.5;
+  --line-height-relaxed: 1.625;
+
+  /* Spacing scale (4px base) */
+  --space-1:  0.25rem;   /*  4px */
+  --space-2:  0.5rem;    /*  8px */
+  --space-3:  0.75rem;   /* 12px */
+  --space-4:  1rem;      /* 16px */
+  --space-5:  1.25rem;   /* 20px */
+  --space-6:  1.5rem;    /* 24px */
+  --space-8:  2rem;      /* 32px */
+  --space-10: 2.5rem;    /* 40px */
+  --space-12: 3rem;      /* 48px */
+  --space-16: 4rem;      /* 64px */
+
+  /* Border radius */
+  --radius-sm:  0.25rem;
+  --radius-md:  0.5rem;
+  --radius-lg:  0.75rem;
+  --radius-xl:  1rem;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast:   100ms ease;
+  --transition-base:   150ms ease;
+  --transition-slow:   300ms ease;
+
+  /* Layout */
+  --max-width:         1200px;
+  --widget-gap:        var(--space-6);
+  --widget-padding:    var(--space-6);
+}
+
+/* --------------------------------------------------------------------------
+   2. Dark Theme Override Block
+   Requirement 8.2: applies to all widgets via data-theme attribute on <html>
+   -------------------------------------------------------------------------- */
+[data-theme="dark"] {
+  /* Colours */
+  --color-bg:            #0f172a;
+  --color-surface:       #1e293b;
+  --color-surface-alt:   #334155;
+  --color-border:        #475569;
+  --color-text-primary:  #f1f5f9;
+  --color-text-secondary:#94a3b8;
+  --color-text-muted:    #64748b;
+  --color-accent:        #818cf8;
+  --color-accent-hover:  #a5b4fc;
+  --color-accent-light:  #1e1b4b;
+  --color-success:       #4ade80;
+  --color-danger:        #f87171;
+  --color-danger-hover:  #fca5a5;
+  --color-warning:       #fbbf24;
+  --color-info:          #38bdf8;
+
+  /* Shadows (more prominent on dark backgrounds) */
+  --shadow-sm:  0 1px 2px rgba(0, 0, 0, 0.30);
+  --shadow-md:  0 4px 6px rgba(0, 0, 0, 0.40);
+  --shadow-lg:  0 10px 15px rgba(0, 0, 0, 0.50);
+}
+
+/* --------------------------------------------------------------------------
+   3. Reset & Base Styles
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  transition: background-color var(--transition-slow), color var(--transition-slow);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  color: var(--color-text-primary);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+input, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   4. Layout â€” Page Structure
+   Requirement 10.1: each widget is a distinct identifiable section
+   -------------------------------------------------------------------------- */
+.page-wrapper {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-6);
+  min-height: 100vh;
+}
+
+/* Site header */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) 0;
+  margin-bottom: var(--space-8);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent);
+}
+
+/* Dashboard grid */
+.dashboard-grid {
+  display: grid;
+  /* Two-column layout: left column (greeting + timer), right column (tasks + links) */
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas:
+    "greeting  tasks"
+    "timer     tasks"
+    "links     tasks";
+  gap: var(--widget-gap);
+  align-items: start;
+}
+
+/* Widget base card */
+.widget {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--widget-padding);
+  box-shadow: var(--shadow-sm);
+  transition: background-color var(--transition-slow), border-color var(--transition-slow);
+}
+
+.widget__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.widget__title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Grid area assignments */
+.widget--greeting { grid-area: greeting; }
+.widget--timer    { grid-area: timer;    }
+.widget--tasks    { grid-area: tasks;    }
+.widget--links    { grid-area: links;    }
+
+/* --------------------------------------------------------------------------
+   5. Storage Banner
+   Requirement 9.3: dismissible overlay; must not block widget interaction
+   -------------------------------------------------------------------------- */
+.storage-banner {
+  display: none; /* shown via JS when storage unavailable */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-warning);
+  color: #1c1917;
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.storage-banner.is-visible {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+.storage-banner__dismiss {
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: var(--radius-sm);
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--font-size-xs);
+  cursor: pointer;
+  color: inherit;
+}
+
+.storage-banner__dismiss:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* --------------------------------------------------------------------------
+   6. Greeting Widget
+   Requirements 1.1â€“1.7
+   -------------------------------------------------------------------------- */
+.greeting__date {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.greeting__time {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: var(--space-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.greeting__message {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+/* --------------------------------------------------------------------------
+   7. Focus Timer Widget
+   Requirements 2.1â€“2.9
+   -------------------------------------------------------------------------- */
+.timer__display {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  text-align: center;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-5);
+  font-variant-numeric: tabular-nums;
+}
+
+.timer__controls {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.timer-notice {
+  display: none;
+  margin-top: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-accent-light);
+  color: var(--color-accent);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+}
+
+.timer-notice.is-visible {
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   8. Task Widget
+   Requirements 3.1â€“3.7, 4.1â€“4.7, 5.1â€“5.7, 6.1â€“6.6
+   -------------------------------------------------------------------------- */
+.task-form {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.task-form__input {
+  flex: 1;
+  min-width: 0;
+}
+
+.sort-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sort-controls__label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+}
+
+.sort-controls__select {
+  flex: 1;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.sort-controls__select:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+  border-color: var(--color-accent);
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-height: var(--space-8);
+  max-height: 460px;
+  overflow-y: auto;
+  padding-right: var(--space-1);
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.task-item:hover {
+  border-color: var(--color-accent);
+}
+
+.task-item__checkbox {
+  flex-shrink: 0;
+  width: 1.125rem;
+  height: 1.125rem;
+  cursor: pointer;
+  accent-color: var(--color-accent);
+}
+
+.task-item__title {
+  flex: 1;
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  word-break: break-word;
+  transition: color var(--transition-fast);
+}
+
+/* Requirement 5.3: visual distinction for completed tasks */
+.task-item--completed .task-item__title {
+  text-decoration: line-through;
+  opacity: 0.5;
+  color: var(--color-text-secondary);
+}
+
+.task-item__actions {
+  display: flex;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+/* Inline edit input within task item */
+.task-item__edit-input {
+  flex: 1;
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+}
+
+.task-item__edit-input:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+/* Empty state */
+.task-list__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-10) var(--space-4);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  text-align: center;
+  gap: var(--space-2);
+}
+
+.task-list__empty-icon {
+  font-size: var(--font-size-3xl);
+  opacity: 0.4;
+}
+
+/* --------------------------------------------------------------------------
+   9. Quick Links Widget
+   Requirements 7.1â€“7.10
+   -------------------------------------------------------------------------- */
+.quicklink-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.quicklink-form__actions {
+  grid-column: 1 / -1;
+}
+
+.quicklink-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.quicklink-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  background-color: var(--color-accent-light);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-full);
+  padding: var(--space-1) var(--space-1) var(--space-1) var(--space-4);
+  transition: background-color var(--transition-fast);
+}
+
+.quicklink-item:hover {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+.quicklink-item__btn {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.quicklink-item__delete {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.6;
+  padding: var(--space-1);
+  border-radius: var(--radius-full);
+  line-height: 1;
+  font-size: var(--font-size-xs);
+  transition: opacity var(--transition-fast);
+}
+
+.quicklink-item__delete:hover {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.quicklink-empty {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  padding: var(--space-4) 0;
+}
+
+/* --------------------------------------------------------------------------
+   10. Theme Toggle Button
+   Requirements 8.1â€“8.3
+   -------------------------------------------------------------------------- */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  background-color: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.theme-toggle:hover {
+  background-color: var(--color-accent-light);
+  border-color: var(--color-accent);
+  transform: scale(1.1);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.theme-toggle__icon {
+  font-size: 1.125rem;
+  line-height: 1;
+  user-select: none;
+}
+
+/* --------------------------------------------------------------------------
+   11. Form Elements (shared)
+   -------------------------------------------------------------------------- */
+.form-input,
+.form-select {
+  display: block;
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-base);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.form-input:focus,
+.form-select:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+  border-color: var(--color-accent);
+}
+
+.form-input:disabled,
+.form-select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Inline validation error */
+.field-error {
+  display: none;
+  margin-top: var(--space-1);
+  font-size: var(--font-size-xs);
+  color: var(--color-danger);
+  font-weight: var(--font-weight-medium);
+}
+
+.field-error.is-visible {
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   12. Buttons (shared)
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Primary */
+.btn--primary {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+}
+
+.btn--primary:hover:not(:disabled) {
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+
+/* Secondary / outline */
+.btn--secondary {
+  background-color: transparent;
+  border-color: var(--color-border);
+  color: var(--color-text-primary);
+}
+
+.btn--secondary:hover:not(:disabled) {
+  background-color: var(--color-surface-alt);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* Danger */
+.btn--danger {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--color-danger);
+}
+
+.btn--danger:hover:not(:disabled) {
+  background-color: rgba(220, 38, 38, 0.1);
+  border-color: var(--color-danger);
+}
+
+/* Ghost / icon */
+.btn--ghost {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--color-text-secondary);
+  padding: var(--space-1) var(--space-2);
+}
+
+.btn--ghost:hover:not(:disabled) {
+  background-color: var(--color-surface-alt);
+  color: var(--color-text-primary);
+}
+
+/* Small modifier */
+.btn--sm {
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--font-size-xs);
+}
+
+/* --------------------------------------------------------------------------
+   13. Scrollbar Styling (optional enhancement)
+   -------------------------------------------------------------------------- */
+.task-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.task-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.task-list::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: var(--radius-full);
+}
+
+.task-list::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   14. Responsive â€” Breakpoint: â‰¤ 768px
+   Requirement 10.5: stack widgets vertically, no horizontal scroll
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .page-wrapper {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .site-header {
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-bottom: var(--space-5);
+  }
+
+  /* Stack all widgets into a single column */
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "greeting"
+      "timer"
+      "tasks"
+      "links";
+  }
+
+  /* Prevent overflow on any child */
+  .dashboard-grid > * {
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .greeting__time {
+    font-size: var(--font-size-3xl);
+  }
+
+  .timer__display {
+    font-size: var(--font-size-3xl);
+  }
+
+  .timer__controls {
+    gap: var(--space-2);
+  }
+
+  .task-form {
+    flex-direction: column;
+  }
+
+  .task-form__input {
+    width: 100%;
+  }
+
+  .quicklink-form {
+    grid-template-columns: 1fr;
+  }
+
+  /* Task list height adjustment on small screens */
+  .task-list {
+    max-height: 320px;
+  }
+}
+
+/* Extra-small screens (â‰¤ 480px) */
+@media (max-width: 480px) {
+  :root {
+    --widget-padding: var(--space-4);
+    --widget-gap:     var(--space-4);
+  }
+
+  .page-wrapper {
+    padding: var(--space-3);
+  }
+
+  .sort-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sort-controls__select {
+    width: 100%;
+  }
+
+  .task-item {
+    padding: var(--space-2) var(--space-3);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   15. Print Styles
+   -------------------------------------------------------------------------- */
+@media print {
+  .theme-toggle,
+  .task-form,
+  .quicklink-form,
+  .timer__controls,
+  .task-item__actions,
+  .quicklink-item__delete,
+  .storage-banner {
+    display: none !important;
+  }
+
+  body {
+    background-color: #fff;
+    color: #000;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
